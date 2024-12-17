@@ -49,23 +49,13 @@ body {
   text-align: center;
 }
 
-.company-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 0px;
-  z-index: 1;
-}
-
 .company-info h1 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font size */
   margin-bottom: 10px;
-
 }
 
 .company-info h6 {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Responsive font size */
   color: gray;
   margin-top: 1px;
 }
@@ -76,61 +66,40 @@ body {
   margin-bottom: 15px;
 }
 
-.author h3 {
-  margin: 0;
-  font-size: 20px;
-  color: #0073e6;
-}
-
-.author p {
-  margin: 5px 0;
-  color: #555;
-  font-size: 16px;
-}
-
 /* Metrics Styles */
 .metrics {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 20px;
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 18px;
   color: #444;
   position: relative;
   z-index: 2;
-  flex-wrap: nowrap; /* Ensure metrics stay in a single line */
-  justify-content: space-evenly; /* Distribute items evenly */
-}
-
-.metrics span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 10px;
 }
 
 .metrics span .percentage {
-  font-size: 24px; /* Larger font for percentages */
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font */
   font-weight: bold;
   color: #0073e6;
 }
 
 .metrics span p {
   margin: 0;
-  font-size: 16px;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
 /* Navigation Buttons */
 .left-arrow,
 .right-arrow {
   position: absolute;
-  font-size: 30px;
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive arrow size */
   background: none;
   border: none;
   color: #0073e6;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  outline: none; /* Remove focus outline */
   z-index: 2;
 }
 
@@ -140,91 +109,65 @@ body {
 }
 
 .left-arrow {
-  left: 550px;
-  bottom: 370px;
-  transform: translateY(-50%);
+  left: 5%;
+  bottom: 50%;
+  transform: translateY(50%);
 }
 
 .right-arrow {
-  right: 560px;
-  bottom: 380px;
-  transform: translateY(-50%);
+  right: 5%;
+  bottom: 50%;
+  transform: translateY(50%);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .metrics {
-    gap: 5px; /* Decrease the gap between metrics */
-    font-size: 18px;
-    margin-top: 60px
-     ; }
-
-  .metrics span .percentage {
-    font-size: 18px;
-  }
-
-  .metrics span p {
-    font-size: 12px;
+    gap: 10px;
+    margin-top: 30px;
   }
 
   .card {
-    width: 60px; /* Decrease card width */
+    width: 90%;
     padding: 15px;
-  }
-
-  .company-info h1 {
-    font-size: 22px;
-  }
-  .company-info h6 {
-    font-size: 15px;
   }
 
   .left-arrow,
   .right-arrow {
-    font-size: 25px;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .metrics {
-    gap: 6px; /* Further decrease gap */
+    gap: 5px;
     font-size: 12px;
-    
   }
 
   .metrics span .percentage {
-    font-size: 18px; /* Smaller percentage font */
-  }
-
-  .metrics span p {
-    font-size: 12px;
+    font-size: 1rem;
   }
 
   .card {
-    width: 60%; /* Make card even smaller on very small screens */
+    width: 85%;
     padding: 10px;
   }
 
   .company-info h1 {
-    font-size: 22px;
+    font-size: 1.3rem;
   }
-.company-info h6 {
-  font-size: 15px;
-}
-.left-arrow:hover,
-.right-arrow:hover {
-  color: #005bb5;
-}
 
-.left-arrow {
-  left: -20px;
-  bottom: 215px;
-  transform: translateY(-50%);
-}
+  .company-info h6 {
+    font-size: 0.9rem;
+  }
 
-.right-arrow {
-  left : 250px;
-  bottom: 220px;
-  transform: translateY(-50%);
-}
+  .left-arrow {
+    left: 1%;
+    font-size: 1.2rem;
+  }
+
+  .right-arrow {
+    right: 1%;
+    font-size: 1.2rem;
+  }
 }
